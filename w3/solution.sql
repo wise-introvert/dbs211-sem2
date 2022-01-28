@@ -72,3 +72,6 @@ INTO employees2  VALUES(
     'Cashier'
 )
 SELECT * FROM dual;
+
+-- Q7 Solution --
+DELETE FROM employees2 WHERE lastname = 'Doe' OR lastname = 'Panjwani';
