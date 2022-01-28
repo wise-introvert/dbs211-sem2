@@ -23,3 +23,16 @@ VALUES(
     1088,
     'Head Cashier'
 );
+
+-- Q3 Solution --
+INSERT INTO employees2
+VALUES(
+    1028415,
+    'Doe',
+    'John',
+    'x2223',
+    'johndoe@myseneca.ca',
+    '4',
+    1028414,
+    'Cashier'
+);
