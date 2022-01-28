@@ -81,3 +81,6 @@ UPDATE employees2
 SET lastname = 'Panjwani',
     firstname = 'Fardeen'
 WHERE employeenumber = 1002;
+
+-- Q9 Solution --
+DELETE FROM employees2 WHERE 1 = 1;
