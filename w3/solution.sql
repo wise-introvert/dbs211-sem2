@@ -78,5 +78,6 @@ DELETE FROM employees2 WHERE lastname = 'Doe' OR lastname = 'Panjwani';
 
 -- Q8 Solution --
 UPDATE employees2
-SET lastname = 'Murphy'
+SET lastname = 'Panjwani',
+    firstname = 'Fardeen'
 WHERE employeenumber = 1002;
