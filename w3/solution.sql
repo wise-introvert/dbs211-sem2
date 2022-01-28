@@ -48,3 +48,27 @@ DELETE from employees2 WHERE employeenumber = 1028415;
 -- Running solution 4 after running this statement works because
 -- now there's no dependency being violated and the employee can be
 -- safely deleted from the table
+
+-- Q6 Solution --
+INSERT ALL 
+INTO employees2 VALUES(
+    1028414,
+    'Panjwani',
+    'Fardeen',
+    'x2222',
+    'fspanjwani@myseneca.ca',
+    '4',
+    1088,
+    'Head Cashier'
+)
+INTO employees2  VALUES(
+    1028415,
+    'Doe',
+    'John',
+    'x2223',
+    'johndoe@myseneca.ca',
+    '4',
+    1088,
+    'Cashier'
+)
+SELECT * FROM dual;
