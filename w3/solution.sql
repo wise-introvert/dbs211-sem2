@@ -36,3 +36,9 @@ VALUES(
     1028414,
     'Cashier'
 );
+
+-- Q4 Solution --
+DELETE FROM employees2 WHERE employeenumber = 1028414;
+-- Fails because there's another row in the table that has it's foreign key
+-- attached to the row being deleted
+-- This results in an "Integrity Constraint Violation"
