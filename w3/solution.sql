@@ -75,3 +75,8 @@ SELECT * FROM dual;
 
 -- Q7 Solution --
 DELETE FROM employees2 WHERE lastname = 'Doe' OR lastname = 'Panjwani';
+
+-- Q8 Solution --
+UPDATE employees2
+SET lastname = 'Murphy'
+WHERE employeenumber = 1002;
