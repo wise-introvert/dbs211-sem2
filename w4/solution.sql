@@ -16,3 +16,15 @@ JOIN payments
 ON customers.customernumber = payments.customernumber
 WHERE customers.country = 'Canada' 
 ORDER BY customers.customernumber;
+
+-- Q2 SOLUTION --
+SELECT
+    employees.employeenumber,
+    employees.firstname || ' ' || employees.lastname AS "Employee Name",
+    employees.email
+FROM employees
+WHERE NOT EXISTS (
+    SELECT 0
+    FROM customers 
+    WHERE customers.salesrepemployeenumber = employees.employeenumber
+);
