@@ -28,3 +28,10 @@ WHERE NOT EXISTS (
     FROM customers 
     WHERE customers.salesrepemployeenumber = employees.employeenumber
 );
+
+--Q3 SOLUTION --
+CREATE VIEW vw_customer_order AS
+    SELECT * from customers
+    JOIN orders on orders.customernumber = customers.customernumber
+    JOIN orderdetails on orderdetails.ordernumber = orders.ordernumber
+    JOIN products on products.productcode = orderdetails.productcode;
