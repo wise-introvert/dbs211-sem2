@@ -54,3 +54,18 @@ WHERE NOT EXISTS (
     FROM orders
     WHERE orders.customernumber = customers.customernumber
 );
+
+-- Q6 SOLUTION --
+CREATE VIEW vw_employee_manager AS
+SELECT e1.employeenumber,
+       e1.lastname,
+       e1.firstname,
+       e1.extension,
+       e1.email,
+       e1.officecode,
+       e1.reportsto,
+       e1.jobtitle,
+       e2.firstname || ' ' || e2.lastname AS "Manager"
+FROM employees e1
+LEFT JOIN employees e2
+ON e1.reportsto = e2.employeenumber;
