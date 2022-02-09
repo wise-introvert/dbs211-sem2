@@ -35,3 +35,9 @@ CREATE VIEW vw_customer_order AS
     JOIN orders on orders.customernumber = customers.customernumber
     JOIN orderdetails on orderdetails.ordernumber = orders.ordernumber
     JOIN products on products.productcode = orderdetails.productcode;
+    
+-- Q4 SOLUTION --
+SELECT * FROM vw_customer_order
+JOIN orderdetails ON orderdetails.ordernumber = vw_customer_order.ordernumber
+WHERE customernumber = 124
+ORDER BY vw_customer_order.ordernumber, orderdetails.orderlinenumber;
