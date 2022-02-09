@@ -41,3 +41,16 @@ SELECT * FROM vw_customer_order
 JOIN orderdetails ON orderdetails.ordernumber = vw_customer_order.ordernumber
 WHERE customernumber = 124
 ORDER BY vw_customer_order.ordernumber, orderdetails.orderlinenumber;
+
+-- Q5 SOLUTION --
+SELECT customernumber,
+       contactfirstname,   
+       contactlastname,
+       phone,
+       creditlimit
+FROM customers
+WHERE NOT EXISTS (
+    SELECT 0
+    FROM orders
+    WHERE orders.customernumber = customers.customernumber
+);
