@@ -70,6 +70,7 @@ FROM employees e1
 LEFT JOIN employees e2
 ON e1.reportsto = e2.employeenumber;
 
+-- Q7 SOLUTION --
 CREATE OR REPLACE VIEW vw_employee_manager AS 
 SELECT e1.employeenumber,
        e1.lastname,
@@ -84,3 +85,7 @@ FROM employees e1
 LEFT JOIN employees e2
 ON e1.reportsto = e2.employeenumber
 WHERE e1.reportsto IS NOT NULL;
+
+-- Q8 SOLUTION --
+DROP VIEW vw_employee_manager;
+DROP VIEW vw_customer_order;
