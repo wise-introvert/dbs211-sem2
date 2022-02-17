@@ -47,17 +47,20 @@ ADD CONSTRAINT fk_movies
   FOREIGN KEY (director_id)
   REFERENCES L5_DIRECTORS(director_id);
 
+-- Q3 SOLUTION --
+TRUNCATE TABLE L5_DIRECTORS;
+
 -- Q4 SOLUTION --
 --      A      --
 DROP TABLE L5_CASTINGS;
 DROP TABLE L5_ACTORS;
-DROP TABLE L5_DIRECTORS;
 DROP TABLE L5_MOVIES;
+DROP TABLE L5_DIRECTORS;
 --      B      --
 -- The order of the statements does matter
 -- because some of the tables have references in
 -- other tables being deleted. Deleting the tables
--- that refer to other tables in their schema
+-- that are being refered by other tables
 -- will throw an error and the best way to resolve this
--- error is to delete the tables being refered before
--- the table refering them.
+-- is to delete the tables with references before
+-- the table being refered.
