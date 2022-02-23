@@ -11,7 +11,7 @@ AS
 (SELECT * FROM employees);
 
 -- Q2 SOLUTION --
-SET AUTCOMMIT OFF;
+SET AUTOCOMMIT OFF;
 SET TRANSACTION READ WRITE;
 
 -- Q3 SOLUTION --
@@ -31,7 +31,7 @@ WHERE employeenumber BETWEEN 100 AND 104;
 -- Q5 SOLUTION --
 ROLLBACK;
 SELECT * FROM newEmployees;
--- number of rows selected:  5
+-- number of rows selected:  23
 
 -- Q6 SOLUTION --
 COMMIT;
@@ -43,7 +43,7 @@ UPDATE newEmployees
 SET jobTitle = 'Unknown';
 
 -- Q8 SOLUTION --
-COMMIT
+COMMIT;
 
 -- Q9 SOLUTION --
 ROLLBACK;
@@ -103,8 +103,8 @@ SELECT * FROM newEmployees
 WHERE jobTitle = 'Unknown';
 
 -- Q16 SOLUTION --
-ROLLBACK to SAVEPOINT;
-SELECT * FROM newEmployees ;
+ROLLBACK to SAVEPOINT insertion;
+SELECT * FROM newEmployees;
 -- The data fetched is similar to what was saved at the SAVEPOINT. 
 -- The rollback command, coupled with the SAVEPOINT flag, reverted all changes
 -- made upto the savepoint.
@@ -137,4 +137,4 @@ FROM dbs211_221zb16;
 
 -- Q22 SOLUTION --
 DROP table newEmployees;
-DROP VIEW vwNewEmp;
+DROP VIEW vwNewEmps;
